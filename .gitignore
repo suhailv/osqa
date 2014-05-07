@@ -1,9 +1,10 @@
-*.pyc
+*.py[co]
 .pydevproject
 .settings
 .project
 log/django.osqa.log
 tmp/*
 
+osqa.sqlite3
 osqa.wsgi
 settings_local.py
