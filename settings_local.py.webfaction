@@ -88,11 +88,72 @@ OSQA_DEFAULT_SKIN = 'uikit'
 
 DISABLED_MODULES = ['books', 'recaptcha', 'project_badges']
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'suhailvs@gmail.com'
-EMAIL_HOST_PASSWORD = 'pnaoeogqwtqlgusd'
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = 'newaboutknx'
+EMAIL_HOST_PASSWORD = 'password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 FB_API_KEY='493842754093140'
 FB_APP_SECRET='57b3fd22586cc5550b79a5b0a112f4f0'
+
+
+#README--> try.aboutknx.webfactional.com
+####################################################
+
+# This creates an Apache server with mod_wsgi 3.4 and Python 2.7 installed
+# running Django 1.6.4.
+
+# The Django libraries are installed in the ~/webapps/<app_name>/lib/python2.7/django directory.
+
+# The front-end web server proxies incoming requests to the Apache server listening on an unprivileged port.
+
+# A cron job is created to restart the Apache server every 20 minutes if it is not already running.
+
+# To restart Apache, run: ~/webapps/<app_name>/apache2/bin/restart
+# To start Apache, run: ~/webapps/<app_name>/apache2/bin/start
+# To stop Apache, run: ~/webapps/<app_name>/apache2/bin/stop
+
+# Django documentation is available at: http://docs.webfaction.com/software/django/index.html
+# Python documentation is available at: http://docs.webfaction.com/software/python.html
+
+##Apache--> apache2/conf/httpd.conf 
+#######################################################
+#ServerRoot "/home/aboutknx/webapps/new/apache2"
+
+#LoadModule dir_module        modules/mod_dir.so
+#LoadModule env_module        modules/mod_env.so
+#LoadModule log_config_module modules/mod_log_config.so
+#LoadModule mime_module       modules/mod_mime.so
+#LoadModule rewrite_module    modules/mod_rewrite.so
+#LoadModule setenvif_module   modules/mod_setenvif.so
+#LoadModule wsgi_module       modules/mod_wsgi.so
+
+#LogFormat "%{X-Forwarded-For}i %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+#CustomLog /home/aboutknx/logs/user/access_new.log combined
+#ErrorLog /home/aboutknx/logs/user/error_new.log
+#KeepAlive Off
+#Listen 15317
+#MaxSpareThreads 3
+#MinSpareThreads 1
+#ServerLimit 1
+#SetEnvIf X-Forwarded-SSL on HTTPS=1
+#ThreadsPerChild 5
+#WSGIPythonPath /home/aboutknx/webapps/new:/home/aboutknx/webapps/new/myproject:/home/aboutknx/webapps/new/lib/python2.7
+#WSGIDaemonProcess new processes=2 threads=12 python-path=/home/aboutknx/webapps/new:/home/aboutknx/webapps/new/myproject:/home/aboutknx/webapps/new/lib/python2.7
+#WSGIProcessGroup new
+#WSGIRestrictEmbedded On
+#WSGILazyInitialization On
+#WSGIScriptAlias / /home/aboutknx/webapps/new/myproject/myproject/wsgi.py
+
+
+##Django WSGI file--> myproject/myproject/wsgi.py
+#######################################################
+#import os
+#import sys
+
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'myproject.settings'
+
+#from django.core.handlers.wsgi import WSGIHandler
+
+#application = WSGIHandler()
