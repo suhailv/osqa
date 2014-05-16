@@ -145,3 +145,5 @@ if not DEBUG:
         pass
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',]
+FB_API_KEY='288925421274806'
+FB_API_SECRET='140d6d1c9ec4466a83b78388a455eedc'
