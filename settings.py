@@ -116,6 +116,9 @@ INSTALLED_APPS = [
     'forum',
 ]
 
+
+"""
+
 if DEBUG:
     try:
         import debug_toolbar
@@ -129,6 +132,9 @@ try:
     INSTALLED_APPS.append('south')
 except:
     pass
+
+"""
+
 
 # Try loading Gunicorn web server
 try:
